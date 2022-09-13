@@ -9,8 +9,7 @@
 // forward declarations
 class GraphEdge;
 
-class GraphNode
-{
+class GraphNode {
 private:
     //// STUDENT CODE
     ////
@@ -32,18 +31,24 @@ private:
 public:
     // constructor / destructor
     GraphNode(int id);
+
     ~GraphNode();
 
     // getter / setter
     int GetID() { return _id; }
+
     int GetNumberOfChildEdges() { return _childEdges.size(); }
+
     GraphEdge *GetChildEdgeAtIndex(int index);
+
     std::vector<std::string> GetAnswers() { return _answers; }
+
     int GetNumberOfParents() { return _parentEdges.size(); }
 
     // proprietary functions
     void AddToken(std::string token); // add answers to list
     void AddEdgeToParentNode(GraphEdge *edge);
+
     void AddEdgeToChildNode(GraphEdge *edge);
 
     //// STUDENT CODE

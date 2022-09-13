@@ -7,11 +7,12 @@
 
 // forward declarations
 class ChatBot;
+
 class GraphEdge;
+
 class GraphNode;
 
-class ChatLogic
-{
+class ChatLogic {
 private:
     //// STUDENT CODE
     ////
@@ -32,22 +33,27 @@ private:
     typedef std::vector<std::pair<std::string, std::string>> tokenlist;
 
     // proprietary functions
-    template <typename T>
+    template<typename T>
     void AddAllTokensToElement(std::string tokenID, tokenlist &tokens, T &element);
 
 public:
     // constructor / destructor
     ChatLogic();
+
     ~ChatLogic();
 
     // getter / setter
     void SetPanelDialogHandle(ChatBotPanelDialog *panelDialog);
+
     void SetChatbotHandle(ChatBot *chatbot);
 
     // proprietary functions
     void LoadAnswerGraphFromFile(std::string filename);
+
     void SendMessageToChatbot(std::string message);
+
     void SendMessageToUser(std::string message);
+
     wxBitmap *GetImageFromChatbot();
 };
 

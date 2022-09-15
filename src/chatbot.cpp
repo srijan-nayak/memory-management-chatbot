@@ -54,13 +54,18 @@ ChatBot::ChatBot(const ChatBot &other) {
 
 
 ChatBot &ChatBot::operator=(const ChatBot &other) {
+    std::cout << "ChatBot Copy Assignment Operator" << std::endl;
+
     if (this != &other) {
-        std::cout << "ChatBot Assignment Constructor" << std::endl;
-
-        _chatLogic = other._chatLogic;
-        _rootNode = other._rootNode;
-
+        if (_image != NULL) {
+            delete _image;
+            _image = NULL;
+        }
         _image = new wxBitmap(*other._image);
+
+        _currentNode = other._currentNode;
+        _rootNode = other._rootNode;
+        _chatLogic = other._chatLogic;
     }
 
     return *this;

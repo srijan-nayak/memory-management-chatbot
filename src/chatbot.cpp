@@ -65,6 +65,18 @@ ChatBot &ChatBot::operator=(const ChatBot &other) {
     return *this;
 }
 
+ChatBot::ChatBot(ChatBot &&other) noexcept {
+    _chatLogic = other._chatLogic;
+    _rootNode = other._rootNode;
+    _currentNode = other._currentNode;
+    _image = other._image;
+
+    other._chatLogic = nullptr;
+    other._rootNode = nullptr;
+    other._currentNode = nullptr;
+    other._image = NULL;
+}
+
 ////
 //// EOF STUDENT CODE
 

@@ -33,6 +33,8 @@ public:
 
     ChatBot& operator=(const ChatBot &other);
 
+    ChatBot(ChatBot &&other) noexcept;
+
     ////
     //// EOF STUDENT CODE
 

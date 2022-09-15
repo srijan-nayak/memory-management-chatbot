@@ -72,15 +72,17 @@ ChatBot &ChatBot::operator=(const ChatBot &other) {
 }
 
 ChatBot::ChatBot(ChatBot &&other) noexcept {
-    _chatLogic = other._chatLogic;
-    _rootNode = other._rootNode;
-    _currentNode = other._currentNode;
-    _image = other._image;
+    std::cout << "ChatBot Move Constructor" << std::endl;
 
-    other._chatLogic = nullptr;
-    other._rootNode = nullptr;
-    other._currentNode = nullptr;
+    _image = other._image;
+    _currentNode = other._currentNode;
+    _rootNode = other._rootNode;
+    _chatLogic = other._chatLogic;
+
     other._image = NULL;
+    other._currentNode = nullptr;
+    other._rootNode = nullptr;
+    other._chatLogic = nullptr;
 }
 
 

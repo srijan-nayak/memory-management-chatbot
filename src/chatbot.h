@@ -35,6 +35,8 @@ public:
 
     ChatBot(ChatBot &&other) noexcept;
 
+    ChatBot& operator=(ChatBot &&other) noexcept;
+
     ////
     //// EOF STUDENT CODE
 

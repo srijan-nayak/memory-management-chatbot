@@ -83,6 +83,30 @@ ChatBot::ChatBot(ChatBot &&other) noexcept {
     other._image = NULL;
 }
 
+
+ChatBot &ChatBot::operator=(ChatBot &&other) noexcept {
+    std::cout << "ChatBot Move Assignment Operator" << std::endl;
+
+    if (this != &other) {
+        if (_image != NULL) {
+            delete _image;
+            _image = NULL;
+        }
+        _image = other._image;
+
+        _currentNode = other._currentNode;
+        _rootNode = other._rootNode;
+        _chatLogic = other._chatLogic;
+
+        other._image = NULL;
+        other._currentNode = nullptr;
+        other._rootNode = nullptr;
+        other._chatLogic = nullptr;
+    }
+
+    return *this;
+}
+
 ////
 //// EOF STUDENT CODE
 

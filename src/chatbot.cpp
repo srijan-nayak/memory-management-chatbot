@@ -45,10 +45,11 @@ ChatBot::~ChatBot() {
 ChatBot::ChatBot(const ChatBot &other) {
     std::cout << "ChatBot Copy Constructor" << std::endl;
 
-    _chatLogic = other._chatLogic;
-    _rootNode = other._rootNode;
-
     _image = new wxBitmap(*other._image);
+
+    _currentNode = other._currentNode;
+    _rootNode = other._rootNode;
+    _chatLogic = other._chatLogic;
 }
 
 

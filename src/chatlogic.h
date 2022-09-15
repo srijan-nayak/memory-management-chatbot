@@ -1,8 +1,10 @@
 #ifndef CHATLOGIC_H_
 #define CHATLOGIC_H_
 
-#include <vector>
+#include <memory>
 #include <string>
+#include <vector>
+
 #include "chatgui.h"
 
 // forward declarations
@@ -18,7 +20,7 @@ private:
     ////
 
     // data handles (owned)
-    std::vector<GraphNode *> _nodes;
+    std::vector<std::unique_ptr<GraphNode>> _nodes;
     std::vector<GraphEdge *> _edges;
 
     ////

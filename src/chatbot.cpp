@@ -1,12 +1,12 @@
-#include <iostream>
-#include <random>
+#include "chatbot.h"
+#include "chatlogic.h"
+#include "graphedge.h"
+#include "graphnode.h"
+
 #include <algorithm>
 #include <ctime>
-
-#include "chatlogic.h"
-#include "graphnode.h"
-#include "graphedge.h"
-#include "chatbot.h"
+#include <iostream>
+#include <random>
 
 // constructor WITHOUT memory allocation
 ChatBot::ChatBot() {
@@ -38,10 +38,6 @@ ChatBot::~ChatBot() {
     }
 }
 
-//// STUDENT CODE
-////
-
-
 ChatBot::ChatBot(const ChatBot &other) {
     std::cout << "ChatBot Copy Constructor" << std::endl;
 
@@ -53,7 +49,6 @@ ChatBot::ChatBot(const ChatBot &other) {
     _currentNode = other._currentNode;
     _rootNode = other._rootNode;
 }
-
 
 ChatBot &ChatBot::operator=(const ChatBot &other) {
     std::cout << "ChatBot Copy Assignment Operator" << std::endl;
@@ -90,7 +85,6 @@ ChatBot::ChatBot(ChatBot &&other) noexcept {
     other._chatLogic = nullptr;
 }
 
-
 ChatBot &ChatBot::operator=(ChatBot &&other) noexcept {
     std::cout << "ChatBot Move Assignment Operator" << std::endl;
 
@@ -115,9 +109,6 @@ ChatBot &ChatBot::operator=(ChatBot &&other) noexcept {
 
     return *this;
 }
-
-////
-//// EOF STUDENT CODE
 
 void ChatBot::ReceiveMessageFromUser(std::string message) {
     // loop over all edges and keywords and compute Levenshtein distance to query
